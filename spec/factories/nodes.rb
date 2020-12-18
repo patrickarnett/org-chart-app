@@ -15,9 +15,14 @@
 #
 #  index_nodes_on_parent_id  (parent_id)
 #
-class Node < ApplicationRecord
-  validates :parent, absence: true, if: :root?
+FactoryBot.define do
+  factory :node do
+    job_title { FFaker::Job.title }
+    first_name { FFaker::Name.first_name }
+    last_name { FFaker::Name.last_name }
 
-  has_many :children, class_name: "Node", foreign_key: "parent_id"
-  belongs_to :parent, class_name: "Node", optional: true
+    trait :root do
+      root { true }
+    end
+  end
 end

@@ -20,6 +20,10 @@ To get the Rails server running locally:
 - `rake db:seed` to add some data
 - `rails s` to start the local server on port 3000 (make sure to stop any other servers that might be listening on that port!)
 
+# Run tests
+
+`bundle exec rake`
+
 # Troubleshooting
 
 Running into issues? Send a note to let us know how we can help!
