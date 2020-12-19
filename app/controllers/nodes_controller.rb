@@ -3,7 +3,7 @@ class NodesController < ApplicationController
   before_action :load_node, only: %i[update]
 
   def index
-    all_nodes = Node.all
+    all_nodes = Node.order(:first_name, :last_name).all
     respond_to do |format|
       format.html { render html: "There are #{all_nodes.count} nodes" }
       format.json { render json: all_nodes }
